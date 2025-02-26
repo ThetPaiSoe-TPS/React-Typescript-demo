@@ -2,19 +2,13 @@
 interface GreetProps {
   name: string;
   age?: number;
+  isLoggedIn?: boolean;
 }
-// const Greet = (props: GreetProps) => {  
-//     return (
-//         <div>
-//         <h2>Hello {props.name}! {props.age? ` is ${props.age} years old.`: ""}</h2>
-//         </div>
-//     );
-//     }
 
-const Greet: React.FC<GreetProps>= ({name, age= 32})=> {
+const Greet: React.FC<GreetProps>= ({name, age= 32, isLoggedIn})=> {
     return (
         <div>
-        <h2> {name} is {age} years old. </h2>
+        <h2> { isLoggedIn? `Welcome ${name}`: `Welcome Guest` } </h2>
         </div>
     );
 }
